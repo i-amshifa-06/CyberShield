@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="topbar">
+
+    <h1>DNS Analyzer</h1>
+
+    <p>
+        Analyze DNS records and
+        domain intelligence
+    </p>
+
+</div>
+
+
+<!-- SEARCH BOX -->
+
+<div class="scanner-box">
+
+    <form method="POST">
+
+        <input type="text"
+               name="domain"
+               placeholder="example.com"
+               required>
+
+        <button type="submit">
+            Analyze DNS
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- RESULTS -->
+
+{% if dns_records %}
+
+<div class="results-section">
+
+    {% for record_type, values in dns_records.items() %}
+
+    <div class="dns-card">
+
+        <h2>{{ record_type }} Records</h2>
+
+        {% if values %}
+
+            {% for value in values %}
+
+            <div class="dns-record">
+                {{ value }}
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="dns-record">
+                No Records Found
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endif %}
+
+{% endblock %}

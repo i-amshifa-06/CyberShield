@@ -1,0 +1,108 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="topbar">
+
+    <h1>Packet Sniffer</h1>
+
+    <p>
+        Monitor live network packets
+        in real time
+    </p>
+
+</div>
+
+
+<!-- SNIFFER BOX -->
+
+<div class="scanner-box">
+
+    <form method="POST">
+
+        <button type="submit">
+            Start Packet Capture
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="scan-info">
+
+    <div class="info-card">
+
+        <h2>Packets Captured</h2>
+
+        <p>{{ packets|length }}</p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h2>Status</h2>
+
+        <p>ACTIVE</p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h2>Protocols</h2>
+
+        <p>TCP / UDP / ICMP / DNS</p>
+
+    </div>
+
+</div>
+
+
+<!-- PACKET TABLE -->
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Source IP</th>
+                <th>Destination IP</th>
+                <th>Protocol</th>
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for packet in packets %}
+
+            <tr>
+
+                <td>{{ packet.source }}</td>
+
+                <td>{{ packet.destination }}</td>
+
+                <td>{{ packet.protocol }}</td>
+
+                <td class="open-status">
+                    CAPTURED
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

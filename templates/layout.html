@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CyberShield Toolkit</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <h2>CyberShield</h2>
+
+            <p>Security Toolkit</p>
+
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="/port-scanner">Port Scanner</a>
+            </li>
+
+            <li>
+                <a href="/network-scanner">Network Scanner</a>
+            </li>
+
+            <li>
+                <a href="/packet-sniffer">Packet Sniffer</a>
+            </li>
+
+            <li>
+                <a href="/dns-analyzer">DNS Analyzer</a>
+            </li>
+
+            <li>
+                <a href="/whois-lookup">WHOIS Lookup</a>
+            </li>
+
+            <li>
+                <a href="/threat-monitor">Threat Monitor</a>
+            </li>
+
+            <li>
+                <a href="/logs">Logs</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+</body>
+
+</html>

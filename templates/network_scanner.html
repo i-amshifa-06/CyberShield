@@ -1,0 +1,117 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="topbar">
+
+    <h1>Network Scanner</h1>
+
+    <p>
+        Discover devices connected
+        to your network
+    </p>
+
+</div>
+
+
+<!-- SCANNER -->
+
+<div class="scanner-box">
+
+    <form method="POST">
+
+        <input type="text"
+               name="ip_range"
+               placeholder="192.168.1.0/24"
+               required>
+
+        <button type="submit">
+            Scan Network
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- RESULTS -->
+
+{% if network_data %}
+
+<div class="scan-info">
+
+    <div class="info-card">
+
+        <h2>Network</h2>
+
+        <p>{{ network_data.network }}</p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h2>Devices Found</h2>
+
+        <p>{{ network_data.total_devices }}</p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h2>Scan Time</h2>
+
+        <p>{{ network_data.scan_time }}</p>
+
+    </div>
+
+</div>
+
+
+<!-- DEVICE TABLE -->
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Device</th>
+                <th>IP Address</th>
+                <th>MAC Address</th>
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for device in network_data.devices %}
+
+            <tr>
+
+                <td>DEVICE</td>
+
+                <td>{{ device.ip }}</td>
+
+                <td>{{ device.mac }}</td>
+
+                <td class="open-status">
+                    ONLINE
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

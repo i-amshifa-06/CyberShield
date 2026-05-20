@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="topbar">
+
+    <h1>WHOIS Lookup</h1>
+
+    <p>
+        Gather domain registration
+        intelligence information
+    </p>
+
+</div>
+
+
+<!-- SEARCH BOX -->
+
+<div class="scanner-box">
+
+    <form method="POST">
+
+        <input type="text"
+               name="domain"
+               placeholder="example.com"
+               required>
+
+        <button type="submit">
+            Lookup WHOIS
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- RESULTS -->
+
+{% if whois_data %}
+
+<div class="whois-grid">
+
+    {% if whois_data.error %}
+
+    <div class="whois-card">
+
+        <h2>Error</h2>
+
+        <p>{{ whois_data.error }}</p>
+
+    </div>
+
+    {% else %}
+
+    <div class="whois-card">
+
+        <h2>Domain Name</h2>
+
+        <p>{{ whois_data.domain_name }}</p>
+
+    </div>
+
+    <div class="whois-card">
+
+        <h2>Registrar</h2>
+
+        <p>{{ whois_data.registrar }}</p>
+
+    </div>
+
+    <div class="whois-card">
+
+        <h2>Creation Date</h2>
+
+        <p>{{ whois_data.creation_date }}</p>
+
+    </div>
+
+    <div class="whois-card">
+
+        <h2>Expiration Date</h2>
+
+        <p>{{ whois_data.expiration_date }}</p>
+
+    </div>
+
+    <div class="whois-card">
+
+        <h2>Country</h2>
+
+        <p>{{ whois_data.country }}</p>
+
+    </div>
+
+    <div class="whois-card">
+
+        <h2>Name Servers</h2>
+
+        <p>{{ whois_data.name_servers }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+
+{% endblock %}

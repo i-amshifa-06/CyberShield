@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="topbar">
+
+    <h1>CyberShield Dashboard</h1>
+
+    <p>
+        Advanced Personal Cybersecurity Toolkit
+    </p>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="cards">
+
+    <div class="card">
+
+        <h2>{{ total_logs }}</h2>
+
+        <p>Total Security Logs</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>{{ total_threats }}</h2>
+
+        <p>Threat Alerts</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>ACTIVE</h2>
+
+        <p>System Status</p>
+
+    </div>
+
+</div>
+
+
+<!-- RECENT ACTIVITY -->
+
+<div class="dashboard-box">
+
+    <h2>Recent Security Activity</h2>
+
+    <br>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Module</th>
+                <th>Action</th>
+                <th>Target</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for log in recent_logs %}
+
+            <tr>
+
+                <td>{{ log[1] }}</td>
+
+                <td>{{ log[2] }}</td>
+
+                <td>{{ log[3] }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

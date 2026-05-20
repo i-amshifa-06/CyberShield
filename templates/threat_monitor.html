@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="topbar">
+
+    <h1>Threat Monitor</h1>
+
+    <p>
+        Monitor suspicious activity
+        and security threats
+    </p>
+
+</div>
+
+
+<!-- THREAT STATS -->
+
+<div class="cards">
+
+    <div class="card">
+
+        <h2>{{ threats|length }}</h2>
+
+        <p>Threat Alerts</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>ACTIVE</h2>
+
+        <p>Monitoring Status</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>SECURE</h2>
+
+        <p>System State</p>
+
+    </div>
+
+</div>
+
+
+<!-- ALERT TABLE -->
+
+<div class="table-container">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Time</th>
+                <th>Threat</th>
+                <th>Severity</th>
+                <th>Source IP</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for threat in threats %}
+
+            <tr>
+
+                <td>{{ threat.time }}</td>
+
+                <td>{{ threat.threat }}</td>
+
+                <td>
+
+                    {% if threat.severity == "HIGH" %}
+
+                        <span class="high-threat">
+                            HIGH
+                        </span>
+
+                    {% elif threat.severity == "MEDIUM" %}
+
+                        <span class="medium-threat">
+                            MEDIUM
+                        </span>
+
+                    {% else %}
+
+                        <span class="low-threat">
+                            LOW
+                        </span>
+
+                    {% endif %}
+
+                </td>
+
+                <td>{{ threat.source }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
