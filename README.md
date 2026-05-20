@@ -137,3 +137,108 @@ CyberShield/
     ├── whois_lookup.html
     ├── threat_monitor.html
     └── logs.html
+```
+
+---
+
+# ⚙️ Installation
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/i-amshifa-06/CyberShield.git
+```
+
+---
+
+## 2️⃣ Open Project
+
+```bash
+cd CyberShield
+```
+
+---
+
+## 3️⃣ Install Requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4️⃣ Run Application
+
+```bash
+python app.py
+```
+
+---
+
+# 🌐 Open In Browser
+
+```text
+http://127.0.0.1:5000
+```
+
+---
+
+# 📸 Screenshots
+
+## Dashboard
+(Add screenshot here)
+
+## Threat Monitor
+(Add screenshot here)
+
+## DNS Analyzer
+(Add screenshot here)
+
+---
+
+# 🔐 Current Security Features
+
+- Packet analysis
+- Traffic monitoring
+- Basic IDS detection
+- Threat alert system
+- DNS intelligence
+- WHOIS reconnaissance
+- Activity logging
+
+---
+
+# 🚧 Future Improvements
+
+- Real-time WebSocket updates
+- Live traffic graphs
+- GeoIP attack tracking
+- AI anomaly detection
+- Login authentication
+- Advanced IDS rules
+- Threat scoring
+- Export reports
+
+---
+
+# ⚠️ Disclaimer
+
+This project is created for:
+- Educational purposes
+- Ethical cybersecurity learning
+- Personal security research
+
+Do NOT use this tool against systems without authorization.
+
+---
+
+# 👨‍💻 Author
+
+Developed by:
+**Shifaul Kareem**
+
+---
+
+# ⭐ CyberShield v1.0
+
+A beginner-to-intermediate cybersecurity monitoring platform built with Python and Flask.
