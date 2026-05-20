@@ -186,13 +186,16 @@ http://127.0.0.1:5000
 # 📸 Screenshots
 
 ## Dashboard
-(Add screenshot here)
+
+![Dashboard](screenshots/Dashboard.png)
 
 ## Threat Monitor
-(Add screenshot here)
+
+![Threat Monitor](screenshots/threat_monitor.png)
 
 ## DNS Analyzer
-(Add screenshot here)
+
+![DNS Analyzer](screenshots/Dns_analyzer.png)
 
 ---
 
